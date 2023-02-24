@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  spring-note:
+    container_name: spring-note
+    image: postgres:15.1
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: spring_note
+      POSTGRES_USER: spring_note
+      POSTGRES_PASSWORD: secret
+
+
