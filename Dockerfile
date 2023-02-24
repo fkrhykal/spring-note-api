@@ -2,8 +2,6 @@ FROM maven
 
 COPY ./ /app
 
-WORKDIR /app
-
 RUN mvn clean install spring:repackage
 
 FROM openjdk:20-ea-17-jdk
