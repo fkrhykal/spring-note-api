@@ -6,11 +6,11 @@ import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class EmailNotificationServiceImpl implements EmailNotificationService {
 
