@@ -30,4 +30,4 @@ COPY --from=0 /app/target/note-0.0.1-SNAPSHOT.jar /note/note.jar
 
 WORKDIR /note
 
-ENTRYPOINT ["java",t "-jar", "/note/note.jar"]
+ENTRYPOINT ["java", "-jar", "/note/note.jar"]
