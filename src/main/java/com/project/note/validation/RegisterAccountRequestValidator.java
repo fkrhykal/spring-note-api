@@ -24,7 +24,7 @@ public class RegisterAccountRequestValidator implements Validation<RegisterAccou
             errors.put(error.getPropertyPath().toString(), error.getMessage());
         });
 
-        if (errors.get("userEmail") == null) {
+        if (errors.get("email") == null) {
             accountRepository.findByEmail(value.email()).ifPresent(account -> {
                 errors.put("email", "Email already used");
             });

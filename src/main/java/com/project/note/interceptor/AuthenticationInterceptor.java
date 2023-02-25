@@ -30,6 +30,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             UserCredentialDto userCredential = authenticationTokenService.getUserCredentialFromToken(token);
             request.setAttribute("User-Credential", userCredential);
         } catch (JWTVerificationException exception) {
+            log.error(exception.getMessage());
             throw new AuthenticationException();
         }
         return HandlerInterceptor.super.preHandle(request, response, handler);
