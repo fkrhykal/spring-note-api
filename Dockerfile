@@ -1,8 +1,8 @@
 FROM maven:3.9.0-amazoncorretto-17
 
-COPY ./ /app
+COPY ./ /build
 
-WORKDIR /app
+WORKDIR /build
 
 ARG MAIL_HOST
 ARG MAIL_USER
@@ -44,8 +44,8 @@ ENV DB_USER ${DB_USER}
 ENV DB_URL ${DB_URL}
 ENV DB_PASSWORD ${DB_PASSWORD}
 
-COPY --from=0 /app/target/note-0.0.1-SNAPSHOT.jar /note/note.jar
+COPY --from=0 /build/target/note-0.0.1-SNAPSHOT.jar /app/note.jar
 
-WORKDIR /note
+WORKDIR /app
 
-ENTRYPOINT ["java", "-jar", "/note/note.jar"]
+ENTRYPOINT ["java", "-jar", "/app/note.jar"]
